@@ -1,0 +1,68 @@
+import java.util.*;
+import java.io.*;
+
+class Arrays
+{
+   public static void main(String args[])
+   {
+      System.out.println("Program to implement the concept of arrays");
+      Scanner sc= new Scanner(System.in);
+      Scanner ab= new Scanner(System.in);
+      long[] a;
+      int n,m,r,choice;
+      String[] ch;
+      String[][] phone_num;
+      System.out.println("1. Array to store phone numbers\n 2. Array to store peoples names\n 3. Phone book[stores name and phonenumber of a person]\n 4. EXIT");
+      do
+      {
+         System.out.println("\n\nEnter your choice:");
+         choice=sc.nextInt();
+         //System.out.println("\n");
+         switch(choice)
+         {
+            case 1: System.out.println("Enter the number of phone numbers you would like to store:");
+                    n=sc.nextInt();
+                    a=new long[n];
+                    System.out.println("Start entering the phone numbers:");
+                    for(int i=0;i<n;i++)
+                       a[i]=sc.nextInt();
+                    System.out.println("You Entered:");
+                    for(int i=0;i<n;i++)
+                       System.out.print(a[i]+", ");
+                    break;
+            case 2: System.out.println("Enter the number of names you would like to store:");
+                    m=sc.nextInt();
+                    ch=new String[m];
+                    System.out.println("Start entering the Names:");
+                    for(int i=0;i<m;i++)
+                       ch[i]=ab.nextLine();
+                    System.out.println("You Entered:");
+                    for(int i=0;i<m;i++)
+                       System.out.print(ch[i]+", ");
+                    break;
+            case 3: System.out.println("Enter number of rows to be filled:");
+                    r=sc.nextInt();
+                    phone_num= new String[r+1][2];
+                    System.out.println("Start entering the names and numbers:");
+                    phone_num[0][0]="Names";
+                    phone_num[0][1]="Phone numbers";
+                    for(int i=1;i<r+1;i++)
+                       for(int j=0;j<2;j++)
+                           phone_num[i][j]=ab.nextLine();
+                    System.out.println("You Entered:");
+                    for(int i=0;i<r+1;i++)
+                    {
+                       for(int j=0;j<2;j++)
+                       {
+                           System.out.print(phone_num[i][j]+"\t\t");
+                        }              
+                        System.out.println("\n");
+                    }
+                    break;
+            case 4: System.exit(0);
+                    break;
+            default:System.out.println("\n Enter a valid choice!!");
+         }
+      }while(true);
+   }
+}
