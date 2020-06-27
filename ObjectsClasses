@@ -1,0 +1,72 @@
+/* The program consists of 3 classes and one object is created for each class.
+The details by the user by choosing the option and the entered details are 
+printed as the program terminates */  
+
+import java.io.*;
+import java.util.*;
+
+class Rectangle
+{
+   int length,breadth;
+   String cl1;
+}
+
+class Triangle
+{
+   int s1, s2, s3;
+   String cl2;
+}
+
+class Circle
+{
+   int radius;
+   String cl3;
+}  
+   
+class Objects_Classes
+{
+   public static void main(String args[])
+   {
+      System.out.println("Example for objects and classes\n\n");
+      System.out.println("1. Rectangle \n 2. Triangle \n 3. Circle \n 4. Terminate\n\n");
+      Rectangle r1=new Rectangle();
+      Triangle t1=new Triangle();
+      Circle c1= new Circle();
+      do
+      {
+         int choice=0;
+         Scanner sc= new Scanner(System.in);
+         System.out.println("Enter your choice:\t");
+         choice=sc.nextInt();
+         System.out.println("\n\n");
+         switch(choice)
+         {
+            case 1: System.out.println("Enter the length and breadth of the rectangle:\n");
+                    r1.length= sc.nextInt();
+                    r1.breadth= sc.nextInt();
+                    System.out.println("Enter the colour of the rectangle");
+                    r1.cl1= sc.nextLine();
+                    break;
+            case 2: System.out.println("Enter the length of all 3 sides of the Triangle:\n");
+                    t1.s1= sc.nextInt();
+                    t1.s2= sc.nextInt();
+                    t1.s3= sc.nextInt();
+                    System.out.println("Enter the colour of the Triangle");
+                    t1.cl2= sc.nextLine();
+                    break;
+            case 3: System.out.println("Enter the radius of the Circle");
+                    c1.radius= sc.nextInt();
+                    System.out.println("Enter the colour of the Circle");
+                    c1.cl3= sc.nextLine();
+                    break;
+            case 4: System.out.println("The Rectangle is of length "+r1.length+" and breadth "+r1.breadth+". \nThe Rectangle is "+r1.cl1+" in colour.");
+                    System.out.println("The Triangles sides are "+t1.s1+","+t1.s2+","+t1.s3+". \nThe Triangle is "+t1.cl2+" in colour.");
+                    System.out.println("The Circle is of radius "+c1.radius+". \nThe Circle is "+c1.cl3+" in colour.\n");
+                    System.out.println("**********End Of Program**********");
+                    System.exit(0);
+                    break;
+            default:System.out.println("Please enter a valid choice");
+         }
+       }while(true);
+    }
+}
